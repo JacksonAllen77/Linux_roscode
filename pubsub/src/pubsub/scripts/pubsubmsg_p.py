@@ -16,7 +16,7 @@ if __name__ == "__main__":
     teacher.height=153.9
     rate=rospy.Rate(2)#设置发布频率为1秒2次
     while not rospy.is_shutdown():
-        teacher.height+=2.5
+        teacher.height+=2
         #发布数据
         pub.publish(teacher)
         rospy.loginfo("写出的数据:%s,%d,%.2f",teacher.name,teacher.age,teacher.height)
