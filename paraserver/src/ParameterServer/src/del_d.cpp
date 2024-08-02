@@ -25,7 +25,7 @@ int main(int argc,char*argv[])
     }
     else
     {
-        ROS_INFO("删除失败！");
+        ROS_INFO("删除失败！！");
     }
 
     bool flag2=ros::param::del("radius_param");

@@ -12,7 +12,7 @@
 */
 void doMsg(const std_msgs::String::ConstPtr &msg)
 {
-    ROS_INFO("接受的消息:%s", msg->data.c_str()); 
+    ROS_INFO("接受消息:%s", msg->data.c_str()); 
 }
 
 int main(int argc, char *argv[])

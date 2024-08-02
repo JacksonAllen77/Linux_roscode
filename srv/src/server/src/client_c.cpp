@@ -42,7 +42,7 @@ int main(int argc,char *argv[])
     bool flag = client.call(ai);
     if(flag)
     {
-        ROS_INFO("客户端响应成功！");
+        ROS_INFO("客户端响应成功!！");
         ROS_INFO("响应结果=%d",ai.response.sum);
     }
     else
