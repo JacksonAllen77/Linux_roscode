@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/work/devel
+
+Name: work_test
+Description: Description of work_test
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
