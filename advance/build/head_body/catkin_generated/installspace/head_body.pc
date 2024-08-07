@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/advance/install
+
+Name: head_body
+Description: Description of head_body
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,2 @@
+head_body:head_body_cpp:learning
+-DCATKIN_DEVEL_PREFIX=/home/ro/ROS/advance/devel -DCMAKE_INSTALL_PREFIX=/home/ro/ROS/advance/install -G Unix Makefiles
