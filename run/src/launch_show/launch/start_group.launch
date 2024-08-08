@@ -1,0 +1,12 @@
+<launch>
+    <!--需求：同时启动两队乌龟GUI与键盘控制节点-->
+    <group ns="first">
+        <node pkg="turtle_teleop" type="turtle_teleop_key" name="turtlesim_KEY"/>
+        <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_GUI"/>
+    </group> 
+    
+    <group ns="second">
+        <node pkg="turtle_teleop" type="turtle_teleop_key" name="turtlesim_KEY"/>
+        <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_GUI"/>
+    </group> 
+</launch>

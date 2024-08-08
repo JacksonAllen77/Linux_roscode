@@ -1,0 +1,14 @@
+<launch>
+    <!-- 需求：演示arg的使用，需要设置多个参数，这些参数使用的是同一个值 -->
+    <!-- 笨办法 -->
+    <!-- <param name="A" default="100"> -->
+    <!-- <param name="B" default="100"> -->
+    <!-- <param name="C" default="100"> -->
+
+    <!-- 好办法【通过arg设置宏并调用宏实现一次修改多个参数】 -->
+    <arg name="car_lenth" default="55"/>
+    <param name="A" value="$(arg car_lenth)"/> 
+    <param name="B" value="$(arg car_lenth)"/>
+    <param name="C" value="$(arg car_lenth)"/>
+
+</launch>

@@ -1,0 +1,4 @@
+<launch>
+     <!-- 用rosparam导出参数 -->
+    <rosparam command="dump" file="$(find launch_show)/launch/params_out.yaml"/>
+</launch>

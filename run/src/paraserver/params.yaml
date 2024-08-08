@@ -1,0 +1,10 @@
+rosdistro: 'noetic
+
+  '
+roslaunch:
+  uris:
+    host_127_0_0_1__45377: http://127.0.0.1:45377/
+rosversion: '1.16.0
+
+  '
+run_id: b4126618-53b7-11ef-8979-6f5e70776bec

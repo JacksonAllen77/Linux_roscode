@@ -1,0 +1,23 @@
+A: 100
+bg_B: 125
+bg_G: 125
+bg_R: 0
+rosdistro: 'noetic
+
+  '
+roslaunch:
+  uris:
+    host_127_0_0_1__33643: http://127.0.0.1:33643/
+    host_127_0_0_1__45433: http://127.0.0.1:45433/
+rosversion: '1.16.0
+
+  '
+run_id: 117bfba6-5567-11ef-be71-315d07632c70
+turtlesim_GUI:
+  B: 3.14
+  background_b: 255
+  background_g: 86
+  background_r: 69
+  bg_B: 125
+  bg_G: 125
+  bg_R: 0

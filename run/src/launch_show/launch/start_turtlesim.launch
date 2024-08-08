@@ -1,0 +1,23 @@
+<launch deprecated="此文件已更新，请使用新版本">
+    <!-- param 标签使用：向参数服务器设置参数 -->
+    <!-- 第一种 param 方式：设置在 node 外部 -->
+    <param name="A" type="int" value="100"/>
+   
+    <!-- rosparam 标签使用：操作参数服务器数据 -->
+    <!-- 第一种 rosparam 方式：设置在 node 外部 -->
+    <rosparam command="load" file="$(find launch_show)/launch/params.yaml"/>
+     <!-- 删除参数 -->
+    <rosparam command="delete" param="A"/>
+
+    <!-- 启动小乌龟界面 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_GUI">
+        <!-- 第二种 param 方式：设置在 node 里面【则该参数在该 node 节点下】 -->
+        <param name="B" type="double" value="3.14"/>
+
+        <!-- 第二种 rosparam 方式：设置在 node 里面【则该参数在该node 节点下】 -->
+        <rosparam command="load" file="$(find launch_show)/launch/params.yaml"/>
+    </node>
+
+    <!-- 启动键盘控制节点 -->
+    <node pkg="turtle_teleop" type="turtle_teleop_key" name="turtlesim_KEY"/>
+</launch>

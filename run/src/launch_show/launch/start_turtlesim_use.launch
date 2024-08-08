@@ -1,0 +1,5 @@
+<launch>
+	<!--导入其他launch文件-->
+    <include file="$(find launch_show)/launch/start_turtlesim.launch" />
+    <!--其他节点等-->
+</launch>
