@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/transformation/devel
+
+Name: still
+Description: Description of still
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
