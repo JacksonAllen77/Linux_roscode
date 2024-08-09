@@ -1,2 +1,2 @@
-still
+dynamic:many:still
 -DCATKIN_DEVEL_PREFIX=/home/ro/ROS/transformation/devel -DCMAKE_INSTALL_PREFIX=/home/ro/ROS/transformation/install -G Unix Makefiles

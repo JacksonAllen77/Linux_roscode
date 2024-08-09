@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/transformation/devel
+
+Name: dynamic
+Description: Description of dynamic
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
