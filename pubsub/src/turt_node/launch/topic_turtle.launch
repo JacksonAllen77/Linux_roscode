@@ -1,0 +1,10 @@
+<!-- <键盘控制乌龟运动> -->
+<launch>
+    <!-- 启动 turtlesim 节点并重映射命令话题 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turt_GUI1">
+        <remap from="/turtle1/cmd_vel" to="/cmd_vel"/>
+    </node>
+    
+    <!-- 启动键盘控制节点 -->
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop"/>
+</launch>

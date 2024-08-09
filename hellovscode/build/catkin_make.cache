@@ -1,2 +1,2 @@
-hellovscode
--DCATKIN_DEVEL_PREFIX=/home/ro/ROS/rostest2/devel -DCMAKE_INSTALL_PREFIX=/home/ro/ROS/rostest2/install -G Unix Makefiles
+hello:hellovscode
+-DCATKIN_DEVEL_PREFIX=/home/ro/ROS/hellovscode/devel -DCMAKE_INSTALL_PREFIX=/home/ro/ROS/hellovscode/install -G Unix Makefiles

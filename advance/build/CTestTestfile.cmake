@@ -7,4 +7,5 @@
 subdirs("gtest")
 subdirs("head_body")
 subdirs("head_body_cpp")
+subdirs("hello")
 subdirs("learning")

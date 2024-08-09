@@ -1,0 +1,11 @@
+  <!-- <需要启动多个同名乌龟GUI节点> -->
+<launch>
+    <!-- <采用起别名方式> -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turt_GUI1"/>
+    <node pkg="turtlesim" type="turtlesim_node" name="turt_GUI2"/>
+    <!-- <采用加前缀的方式> -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turt_GUI1" ns="mama"/>
+    <!-- <采用加起别名+前缀的方式> -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turt_GUI3" ns="baba"/>
+
+</launch>

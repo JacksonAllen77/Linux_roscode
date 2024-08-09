@@ -67,6 +67,14 @@
 /home/ro/ROS/advance/build/head_body_cpp/CMakeFiles/test.dir
 /home/ro/ROS/advance/build/head_body_cpp/CMakeFiles/usehello.dir
 /home/ro/ROS/advance/build/head_body_cpp/CMakeFiles/head_src.dir
+/home/ro/ROS/advance/build/hello/CMakeFiles/install/strip.dir
+/home/ro/ROS/advance/build/hello/CMakeFiles/install.dir
+/home/ro/ROS/advance/build/hello/CMakeFiles/list_install_components.dir
+/home/ro/ROS/advance/build/hello/CMakeFiles/rebuild_cache.dir
+/home/ro/ROS/advance/build/hello/CMakeFiles/edit_cache.dir
+/home/ro/ROS/advance/build/hello/CMakeFiles/test.dir
+/home/ro/ROS/advance/build/hello/CMakeFiles/install/local.dir
+/home/ro/ROS/advance/build/hello/CMakeFiles/hello_1.dir
 /home/ro/ROS/advance/build/learning/CMakeFiles/install/strip.dir
 /home/ro/ROS/advance/build/learning/CMakeFiles/install/local.dir
 /home/ro/ROS/advance/build/learning/CMakeFiles/test01.dir

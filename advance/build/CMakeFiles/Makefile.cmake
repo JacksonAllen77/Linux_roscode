@@ -17,6 +17,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "head_body/catkin_generated/package.cmake"
   "head_body_cpp/catkin_generated/ordered_paths.cmake"
   "head_body_cpp/catkin_generated/package.cmake"
+  "hello/catkin_generated/ordered_paths.cmake"
+  "hello/catkin_generated/package.cmake"
   "learning/catkin_generated/ordered_paths.cmake"
   "learning/catkin_generated/package.cmake"
   "/home/ro/ROS/advance/src/CMakeLists.txt"
@@ -26,6 +28,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/ro/ROS/advance/src/head_body/scripts/use.py"
   "/home/ro/ROS/advance/src/head_body_cpp/CMakeLists.txt"
   "/home/ro/ROS/advance/src/head_body_cpp/package.xml"
+  "/home/ro/ROS/advance/src/hello/CMakeLists.txt"
+  "/home/ro/ROS/advance/src/hello/package.xml"
   "/home/ro/ROS/advance/src/learning/CMakeLists.txt"
   "/home/ro/ROS/advance/src/learning/package.xml"
   "/home/ro/ROS/advance/src/learning/scripts/test01.py"
@@ -197,6 +201,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "head_body/CMakeFiles/CMakeDirectoryInformation.cmake"
   "head_body_cpp/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "hello/CMakeFiles/CMakeDirectoryInformation.cmake"
   "learning/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -229,6 +234,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "head_body/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake"
   "head_body_cpp/CMakeFiles/usehello.dir/DependInfo.cmake"
   "head_body_cpp/CMakeFiles/head_src.dir/DependInfo.cmake"
+  "hello/CMakeFiles/hello_1.dir/DependInfo.cmake"
   "learning/CMakeFiles/test01.dir/DependInfo.cmake"
   "learning/CMakeFiles/test02_p.dir/DependInfo.cmake"
   "learning/CMakeFiles/test02_s.dir/DependInfo.cmake"

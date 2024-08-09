@@ -133,6 +133,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ro/ROS/advance/build/gtest/cmake_install.cmake")
   include("/home/ro/ROS/advance/build/head_body/cmake_install.cmake")
   include("/home/ro/ROS/advance/build/head_body_cpp/cmake_install.cmake")
+  include("/home/ro/ROS/advance/build/hello/cmake_install.cmake")
   include("/home/ro/ROS/advance/build/learning/cmake_install.cmake")
 
 endif()

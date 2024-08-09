@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/pubsub/install
+
+Name: turt_node
+Description: Description of turt_node
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

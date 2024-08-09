@@ -2,4 +2,4 @@
 source_root_dir = '/home/ro/ROS/advance/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/opt/ros/noetic'.split(';') if '/opt/ros/noetic' != '' else []
+underlay_workspaces = '/home/ro/ROS/pubsub/devel;/opt/ros/noetic'.split(';') if '/home/ro/ROS/pubsub/devel;/opt/ros/noetic' != '' else []
