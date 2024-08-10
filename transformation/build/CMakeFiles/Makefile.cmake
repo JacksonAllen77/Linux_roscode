@@ -26,6 +26,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/ro/ROS/transformation/src/dynamic/scripts/dynamic_s.py"
   "/home/ro/ROS/transformation/src/many/CMakeLists.txt"
   "/home/ro/ROS/transformation/src/many/package.xml"
+  "/home/ro/ROS/transformation/src/many/scripts/many_s.py"
   "/home/ro/ROS/transformation/src/still/CMakeLists.txt"
   "/home/ro/ROS/transformation/src/still/package.xml"
   "/home/ro/ROS/transformation/src/still/scripts/static_p.py"

@@ -19,8 +19,6 @@ tf2_geometry_msgs/tf2_geometry_msgs.h
 /home/ro/ROS/transformation/src/many/src/tf2_geometry_msgs/tf2_geometry_msgs.h
 geometry_msgs/TransformStamped.h
 /home/ro/ROS/transformation/src/many/src/geometry_msgs/TransformStamped.h
-tf2/LinearMath/Quaternion.h
-/home/ro/ROS/transformation/src/many/src/tf2/LinearMath/Quaternion.h
 
 /opt/ros/noetic/include/geometry_msgs/Point.h
 string
