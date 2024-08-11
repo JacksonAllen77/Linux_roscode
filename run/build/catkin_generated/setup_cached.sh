@@ -9,6 +9,8 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/ro/ROS/run/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/ro/ROS/run/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/ro/ROS/run/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/ro/ROS/run/build'
+export PYTHONPATH="/home/ro/ROS/run/devel/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES='/home/ro/ROS/run/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/ro/ROS/run/src:$ROS_PACKAGE_PATH"

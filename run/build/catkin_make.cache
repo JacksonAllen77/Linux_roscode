@@ -1,2 +1,2 @@
-paraserver/src/ParameterServer:pubsub/src/pubsub:run_my:srv/src/server
+launch_show:paraserver/src/ParameterServer:pubsub/src/pubsub:run_my:srv/src/server:topic_name
 -DCATKIN_DEVEL_PREFIX=/home/ro/ROS/run/devel -DCMAKE_INSTALL_PREFIX=/home/ro/ROS/run/install -G Unix Makefiles

@@ -135,6 +135,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ro/ROS/run/build/paraserver/src/ParameterServer/cmake_install.cmake")
   include("/home/ro/ROS/run/build/pubsub/src/pubsub/cmake_install.cmake")
   include("/home/ro/ROS/run/build/srv/src/server/cmake_install.cmake")
+  include("/home/ro/ROS/run/build/topic_name/cmake_install.cmake")
+  include("/home/ro/ROS/run/build/launch_show/cmake_install.cmake")
 
 endif()
 

@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/run/devel
+
+Name: topic
+Description: Description of topic
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

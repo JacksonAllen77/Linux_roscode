@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/run/devel
+
+Name: launch_show
+Description: Description of launch_show
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
