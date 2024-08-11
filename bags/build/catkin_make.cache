@@ -1,2 +1,2 @@
-rosbag_demo
+rosbag_demo:rosrqt_demo
 -DCATKIN_DEVEL_PREFIX=/home/ro/ROS/bags/devel -DCMAKE_INSTALL_PREFIX=/home/ro/ROS/bags/install -G Unix Makefiles

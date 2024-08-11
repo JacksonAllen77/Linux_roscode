@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/bags/devel
+
+Name: rosrqt_demo
+Description: Description of rosrqt_demo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
