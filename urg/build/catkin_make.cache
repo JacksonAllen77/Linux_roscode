@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/ro/ROS/urg/devel -DCMAKE_INSTALL_PREFIX=/home/ro/ROS/urg/install -G Unix Makefiles

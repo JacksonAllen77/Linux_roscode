@@ -818,6 +818,19 @@ turtlesim_generate_messages_lisp/fast:
 .PHONY : turtlesim_generate_messages_lisp/fast
 
 #=============================================================================
+# Target rules for targets named test_many
+
+# Build rule for target.
+test_many: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_many
+.PHONY : test_many
+
+# fast build rule for target.
+test_many/fast:
+	$(MAKE) -f do/CMakeFiles/test_many.dir/build.make do/CMakeFiles/test_many.dir/build
+.PHONY : test_many/fast
+
+#=============================================================================
 # Target rules for targets named turtlesim_generate_messages_nodejs
 
 # Build rule for target.
@@ -1023,6 +1036,7 @@ help:
 	@echo "... turtlesim_generate_messages_cpp"
 	@echo "... turtlesim_generate_messages_eus"
 	@echo "... turtlesim_generate_messages_lisp"
+	@echo "... test_many"
 	@echo "... turtlesim_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_py"
 	@echo "... std_srvs_generate_messages_cpp"

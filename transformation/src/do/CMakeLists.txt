@@ -140,6 +140,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(test_turtle src/test_turtle.cpp)
 add_executable(test_pose src/test_pose.cpp)
+add_executable(test_many src/test_many.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -150,12 +151,16 @@ add_executable(test_pose src/test_pose.cpp)
 ## same as for the library above
 add_dependencies(test_turtle ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(test_pose ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(test_many ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(test_turtle
   ${catkin_LIBRARIES}
 )
 target_link_libraries(test_pose
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(test_many
   ${catkin_LIBRARIES}
 )
 #############

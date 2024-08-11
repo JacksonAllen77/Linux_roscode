@@ -6,7 +6,11 @@
     <node pkg="do" type="test_turtle" name="turtle2" output="screen"/>
     <!-- 3.需要启动两个乌龟相对于世界的坐标系的关系发布 -->
     <!-- 实现思路——1.节点只编写一个；2.该节点需要启动两次；3.节点启动时动态传入参数，第一次传入1的名称，第二次传入2的名称  -->
-    <node pkg="do" type="test_pose" name="pub1" args="turtl1" output="screen"/>
-    <node pkg="do" type="test_pose" name="pub2" args="turtl2" output="screen"/>
+    <node pkg="do" type="test_pose" name="pub1" args="turtle1" output="screen"/>
+    <node pkg="do" type="test_pose" name="pub2" args="turtle2" output="screen"/>
+    <!-- 4.订阅乌龟1和乌龟2相对于世界坐标系消息，并转换成乌龟1相对于乌龟2的坐标关系 -->
+    <node pkg="do" type="test_many" name="control" output="screen"/>
+    <!-- 5.再生成速度消息 -->
+
 
 </launch>

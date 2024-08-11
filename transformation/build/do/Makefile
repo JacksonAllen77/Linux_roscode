@@ -100,6 +100,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -123,17 +134,6 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -211,6 +211,21 @@ turtlesim_generate_messages_lisp: do/CMakeFiles/turtlesim_generate_messages_lisp
 turtlesim_generate_messages_lisp/fast:
 	cd /home/ro/ROS/transformation/build && $(MAKE) -f do/CMakeFiles/turtlesim_generate_messages_lisp.dir/build.make do/CMakeFiles/turtlesim_generate_messages_lisp.dir/build
 .PHONY : turtlesim_generate_messages_lisp/fast
+
+# Convenience name for target.
+do/CMakeFiles/test_many.dir/rule:
+	cd /home/ro/ROS/transformation/build && $(MAKE) -f CMakeFiles/Makefile2 do/CMakeFiles/test_many.dir/rule
+.PHONY : do/CMakeFiles/test_many.dir/rule
+
+# Convenience name for target.
+test_many: do/CMakeFiles/test_many.dir/rule
+
+.PHONY : test_many
+
+# fast build rule for target.
+test_many/fast:
+	cd /home/ro/ROS/transformation/build && $(MAKE) -f do/CMakeFiles/test_many.dir/build.make do/CMakeFiles/test_many.dir/build
+.PHONY : test_many/fast
 
 # Convenience name for target.
 do/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule:
@@ -347,6 +362,33 @@ test_turtle/fast:
 	cd /home/ro/ROS/transformation/build && $(MAKE) -f do/CMakeFiles/test_turtle.dir/build.make do/CMakeFiles/test_turtle.dir/build
 .PHONY : test_turtle/fast
 
+src/test_many.o: src/test_many.cpp.o
+
+.PHONY : src/test_many.o
+
+# target to build an object file
+src/test_many.cpp.o:
+	cd /home/ro/ROS/transformation/build && $(MAKE) -f do/CMakeFiles/test_many.dir/build.make do/CMakeFiles/test_many.dir/src/test_many.cpp.o
+.PHONY : src/test_many.cpp.o
+
+src/test_many.i: src/test_many.cpp.i
+
+.PHONY : src/test_many.i
+
+# target to preprocess a source file
+src/test_many.cpp.i:
+	cd /home/ro/ROS/transformation/build && $(MAKE) -f do/CMakeFiles/test_many.dir/build.make do/CMakeFiles/test_many.dir/src/test_many.cpp.i
+.PHONY : src/test_many.cpp.i
+
+src/test_many.s: src/test_many.cpp.s
+
+.PHONY : src/test_many.s
+
+# target to generate assembly for a file
+src/test_many.cpp.s:
+	cd /home/ro/ROS/transformation/build && $(MAKE) -f do/CMakeFiles/test_many.dir/build.make do/CMakeFiles/test_many.dir/src/test_many.cpp.s
+.PHONY : src/test_many.cpp.s
+
 src/test_pose.o: src/test_pose.cpp.o
 
 .PHONY : src/test_pose.o
@@ -411,10 +453,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... install/local"
 	@echo "... turtlesim_generate_messages_cpp"
 	@echo "... turtlesim_generate_messages_eus"
 	@echo "... turtlesim_generate_messages_lisp"
+	@echo "... test_many"
 	@echo "... install/strip"
 	@echo "... turtlesim_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_py"
@@ -425,7 +469,9 @@ help:
 	@echo "... turtlesim_generate_messages_py"
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... test_turtle"
-	@echo "... test"
+	@echo "... src/test_many.o"
+	@echo "... src/test_many.i"
+	@echo "... src/test_many.s"
 	@echo "... src/test_pose.o"
 	@echo "... src/test_pose.i"
 	@echo "... src/test_pose.s"

@@ -4,30 +4,6 @@
 #include "geometry_msgs/TransformStamped.h"//组织被发布消息所需包含的头文件
 #include "tf2/LinearMath/Quaternion.h"//将欧拉角转换成四元数所需包含的头文件
 
-
-/*  
-    动态的坐标系相对姿态发布(一个坐标系相对于另一个坐标系的相对姿态是不断变动的)
-
-    需求: 启动 turtlesim_node,该节点中窗体有一个世界坐标系(左下角为坐标系原点)，乌龟是另一个坐标系，键盘
-    控制乌龟运动，将两个坐标系的相对位置动态发布
-
-    实现分析:
-        1.乌龟本身不但可以看作坐标系，也是世界坐标系中的一个坐标点
-        2.订阅 turtle1/pose,可以获取乌龟在世界坐标系的 x坐标、y坐标、偏移量以及线速度和角速度
-        3.将 pose 信息转换成 坐标系相对信息并发布
-
-    实现流程:
-        1.包含头文件
-        2.初始化 ROS 节点
-        3.创建 ROS 句柄
-        4.创建订阅对象
-        5.回调函数处理订阅到的数据(实现TF广播)
-            5-1.创建 TF 广播器
-            5-2.创建 广播的数据(通过 pose 设置)
-            5-3.广播器发布数据
-        6.spin
-*/
-
 //声明变量来接受传入的参数
 std::string turtle_name;
 
@@ -61,6 +37,8 @@ void doPose(const turtlesim::Pose::ConstPtr& pose)
 int main(int argc,char*argv[])
 {
     setlocale(LC_ALL,"");//避免中文乱码问题
+    ros::init(argc,argv,"dynamic_p");//初始化ros对象
+    ros::NodeHandle nh;//创建ros句柄
     if(argc !=2)
     {
         ROS_ERROR("请传入一个参数");
@@ -71,8 +49,7 @@ int main(int argc,char*argv[])
         turtle_name=argv[1];
     }
    
-    ros::init(argc,argv,"dynamic_p");//初始化ros对象
-    ros::NodeHandle nh;//创建ros句柄
+   
         //修改的关键点
         //关键点1.订阅的两只乌龟的话题名称是动态传入的
     ros::Subscriber sub=nh.subscribe(turtle_name+"/pose",100,doPose);//创建订阅对象（话题名称，队列长度，回调函数）
