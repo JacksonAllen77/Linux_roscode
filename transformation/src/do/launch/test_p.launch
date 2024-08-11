@@ -1,9 +1,9 @@
 <launch>
-    <!-- <1.启动乌龟的GUI> -->
+    <!-- <1.启动乌龟的GUI与键盘控制节点> -->
     <node pkg="turtlesim" type="turtlesim_node" name="turtle1" output="screen"/>
     <node pkg="turtlesim" type="turtle_teleop_key" name="control1" output="screen"/>
     <!-- <2.生成一个新的小乌龟> -->
-    <node pkg="do" type="test_turtle" name="turtle2" output="screen"/>
+    <node pkg="do" type="test_turtle.py" name="turtle2" output="screen"/>
     <!-- 3.需要启动两个乌龟相对于世界的坐标系的关系发布 -->
     <!-- 实现思路——1.节点只编写一个；2.该节点需要启动两次；3.节点启动时动态传入参数，第一次传入1的名称，第二次传入2的名称  -->
     <node pkg="do" type="test_pose" name="pub1" args="turtle1" output="screen"/>
