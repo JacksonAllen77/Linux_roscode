@@ -133,6 +133,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ro/ROS/transformation/build/gtest/cmake_install.cmake")
   include("/home/ro/ROS/transformation/build/many/cmake_install.cmake")
   include("/home/ro/ROS/transformation/build/still/cmake_install.cmake")
+  include("/home/ro/ROS/transformation/build/do/cmake_install.cmake")
   include("/home/ro/ROS/transformation/build/dynamic/cmake_install.cmake")
 
 endif()

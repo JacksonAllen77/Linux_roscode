@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/transformation/install
+
+Name: do
+Description: Description of do
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

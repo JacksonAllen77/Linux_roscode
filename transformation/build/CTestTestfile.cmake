@@ -7,4 +7,5 @@
 subdirs("gtest")
 subdirs("many")
 subdirs("still")
+subdirs("do")
 subdirs("dynamic")
