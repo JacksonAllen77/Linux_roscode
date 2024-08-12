@@ -1,0 +1,20 @@
+digraph G {
+node [shape=box];
+"base_footprint" [label="base_footprint"];
+"base_link" [label="base_link"];
+"left_drive" [label="left_drive"];
+"right_drive" [label="right_drive"];
+"left_gimbal" [label="left_gimbal"];
+"right_gimbal" [label="right_gimbal"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_footprint" -> "base_footprint" [label="xyz: 0 0 0.055 \nrpy: 0 -0 0"]
+"base_footprint" -> "base_link"
+"base_link" -> "base_drive1" [label="xyz: 0 0.1 -0.0225 \nrpy: 1.57 -0 0"]
+"base_drive1" -> "left_drive"
+"base_link" -> "base_drive2" [label="xyz: 0 -0.1 -0.0225 \nrpy: 1.57 -0 0"]
+"base_drive2" -> "right_drive"
+"base_link" -> "base_gimbal1" [label="xyz: 0.08 0 -0.0475 \nrpy: 0 -0 0"]
+"base_gimbal1" -> "left_gimbal"
+"base_link" -> "base_gimbal2" [label="xyz: -0.08 0 -0.0475 \nrpy: 0 -0 0"]
+"base_gimbal2" -> "right_gimbal"
+}

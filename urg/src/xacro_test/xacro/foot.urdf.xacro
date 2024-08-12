@@ -1,0 +1,95 @@
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="footprint_radius" value="0.001"/>
+    <link name="base_footprint">
+        <visual>
+            <geometry>
+                <sphere radius="${footprint_radius}"/>
+            </geometry>
+        </visual>
+    </link>
+    <xacro:property name="base_radius" value="0.1"/>
+    <xacro:property name="base_length" value="0.08"/>
+    <xacro:property name="up_ground" value="0.015"/>
+    <xacro:property name="z_move" value="${(base_length/2)+up_ground}"/>
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${base_radius}" length="${base_length}"/> 
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="base_colour">
+                <color rgba="0 0.5 0.5 0.5"/>
+            </material>
+        </visual>
+    </link>
+    
+    <joint name="base_footprint" type="fixed">
+        <!-- 父级link -->
+        <parent link="base_footprint"/>
+        <!-- 子级link    -->
+        <child link="base_link"/>
+        <!-- 设置偏移量——Z方向偏移量【离地间距+底盘高度/2】 -->
+        <origin xyz="0 0 ${z_move}" rpy="0 0 0"/>
+    </joint>
+    <!-- （驱动轮部分） -->
+    <xacro:macro name="drive_name" params="drive_side flag">
+        <xacro:property name="drive_radius" value="0.0325"/>
+        <xacro:property name="drive_length" value="0.015"/>
+        <xacro:property name="PI" value="3.1415"/>
+        <xacro:property name="drive_zlink" value="${(z_move-drive_radius)*-1}"/>
+
+        <link name="${drive_side}_drive">
+            <visual>
+                <geometry>
+                    <cylinder radius="${drive_radius}" length="${drive_length}"/> 
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <material name="drive_colour">
+                    <color rgba="1 0 0 0.3"/>
+                </material>
+            </visual>
+        </link>
+        <joint name="base_${drive_side}" type="continuous">
+            <!-- 父级link -->
+            <parent link="base_link"/>
+            <!-- 子级link    -->
+            <child link="${drive_side}_drive"/>
+            <!-- 设置偏移量——Z方向偏移量【车体高度/2+离地高度-车轮半径】 -->
+            <origin xyz="0 ${0.1*flag} ${drive_zlink}" rpy="${PI/2} 0 0"/>
+            <!-- 设置关节旋转坐标轴 -->
+            <axis xyz="0.0 1.0 0.0"/>
+        </joint>    
+    </xacro:macro>
+    <xacro:drive_name drive_side="left" flag="1"/>
+    <xacro:drive_name drive_side="right" flag="-1"/>
+     <!-- （万向轮部分） -->
+    <xacro:property name="gimbal_radius" value="0.0075"/>
+    <xacro:property name="gimbal_zlink" value="${(z_move-gimbal_radius)*-1}"/>
+    <xacro:macro name="gimbal_name" params="gimbal_side flag2">
+        
+        <link name="${gimbal_side}_gimbal">
+            <visual>
+                <geometry>
+                    <sphere radius="${gimbal_radius}"/>
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0"/>
+                <material name="gimbal_colour">
+                    <color rgba="0 0 1 0.3"/>
+                </material>
+            </visual>
+        </link>
+        <joint name="base_${gimbal_side}" type="continuous">
+            <!-- 父级link -->
+            <parent link="base_link"/>
+            <!-- 子级link    -->
+            <child link="${gimbal_side}_gimbal"/>
+            <!-- 设置偏移量——Z方向偏移量【车体高度/2+离地高度-车轮半径】 -->
+            <origin xyz="${0.08*flag2} 0 ${gimbal_zlink}" rpy="0 0 0"/>
+            <!-- 设置关节旋转坐标轴 -->
+            <axis xyz="1.0 1.0 1.0"/>
+        </joint>
+    </xacro:macro>
+    <xacro:gimbal_name gimbal_side="front" flag2="1"/>
+    <xacro:gimbal_name gimbal_side="back" flag2="-1"/>
+
+</robot>

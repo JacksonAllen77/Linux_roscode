@@ -1,0 +1,122 @@
+<robot name="my_robot">
+    <!-- 添加一个尺寸极小的link,
+    再去关联初始link与base_link,关节的高度刚好和base_link下城的高度一致 -->
+    <link name="base_footprint">
+        <visual>
+            <geometry>
+                <box size="0.001 0.001 0.001"/>
+            </geometry>
+        </visual>
+    </link>
+    <!-- 底盘部件 -->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.08"/> 
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="base_colour">
+                <color rgba="0 0.5 0.5 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <!-- 左驱动轮部件 -->
+    <link name="left_drive">
+        <visual>
+            <geometry>
+                <cylinder radius="0.0325" length="0.015"/> 
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="drive_colour">
+                <color rgba="1 0 0 0.3"/>
+            </material>
+        </visual>
+    </link>
+    <!-- 右驱动轮部件 -->
+    <link name="right_drive">
+        <visual>
+            <geometry>
+                <cylinder radius="0.0325" length="0.015"/> 
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="drive_colour">
+                <color rgba="1 0 0 0.3"/>
+            </material>
+        </visual>
+    </link>
+    <!-- 左万向轮部件 -->
+    <link name="left_gimbal">
+        <visual>
+            <geometry>
+                <sphere radius="0.0075"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="gimbal_colour">
+                <color rgba="0 0 1 0.3"/>
+            </material>
+        </visual>
+    </link>
+    <!-- 右万向轮部件 -->
+    <link name="right_gimbal">
+        <visual>
+            <geometry>
+                <sphere radius="0.0075"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="gimbal_colour">
+                <color rgba="0 0 1 0.3"/>
+            </material>
+        </visual>
+    </link>
+    <!-- 关节 关联base_link和base_footprint-->
+    <joint name="base_footprint" type="fixed">
+        <!-- 父级link -->
+        <parent link="base_footprint"/>
+        <!-- 子级link    -->
+        <child link="base_link"/>
+        <!-- 设置偏移量——Z方向偏移量【离地间距+底盘高度/2】 -->
+        <origin xyz="0 0 0.055" rpy="0 0 0"/>
+    </joint>
+    <!-- 关节 关联base_link和drive-->
+    <joint name="base_drive1" type="continuous">
+        <!-- 父级link -->
+        <parent link="base_link"/>
+        <!-- 子级link    -->
+        <child link="left_drive"/>
+        <!-- 设置偏移量——Z方向偏移量【车体高度/2+离地高度-车轮半径】 -->
+        <origin xyz="0 0.1 -0.0225" rpy="1.57 0 0"/>
+        <!-- 设置关节旋转坐标轴 -->
+        <axis xyz="0.0 1.0 0.0"/>
+    </joint>
+    <joint name="base_drive2" type="continuous">
+        <!-- 父级link -->
+        <parent link="base_link"/>
+        <!-- 子级link    -->
+        <child link="right_drive"/>
+        <!-- 设置偏移量——Z方向偏移量【车体高度/2+离地高度-车轮半径】 -->
+        <origin xyz="0 -0.1 -0.0225" rpy="1.57 0 0"/>
+        <!-- 设置关节旋转坐标轴 -->
+        <axis xyz="0.0 1.0 0.0"/>
+    </joint>
+    <!-- 关节 关联base_link和gimbal-->
+    <joint name="base_gimbal1" type="continuous">
+        <!-- 父级link -->
+        <parent link="base_link"/>
+        <!-- 子级link    -->
+        <child link="left_gimbal"/>
+        <!-- 设置偏移量——Z方向偏移量【车体高度/2+离地高度-车轮半径】 -->
+        <origin xyz="0.08 0 -0.0475" rpy="0 0 0"/>
+        <!-- 设置关节旋转坐标轴 -->
+        <axis xyz="1.0 1.0 1.0"/>
+    </joint>
+    <joint name="base_gimbal2" type="continuous">
+        <!-- 父级link -->
+        <parent link="base_link"/>
+        <!-- 子级link    -->
+        <child link="right_gimbal"/>
+        <!-- 设置偏移量——Z方向偏移量【车体高度/2+离地高度-车轮半径】 -->
+        <origin xyz="-0.08 0 -0.0475" rpy="0 0 0"/>
+        <!-- 设置关节旋转坐标轴 -->
+        <axis xyz="1.0 1.0 1.0"/>
+    </joint>
+</robot>

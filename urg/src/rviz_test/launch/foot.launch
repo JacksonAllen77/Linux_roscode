@@ -1,0 +1,13 @@
+<launch>
+    <!-- <1.在参数服务器载入urdf文件> -->
+    <param name="robot_description" textfile="$(find rviz_test)/urdf/urdf/foot.urdf" />
+    <!-- <2.启动rviz> -->
+    <node pkg="rviz" type="rviz" name="rviz_gui" args="-d $(find rviz_test)/config/robot_test.rviz" />
+    <!-- <3.关节状态发布节点> -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint" />
+    <!-- <4.机器人状态发布节点> -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot" />
+    <!-- 添加控制关节运动的节点 -->
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_move" />
+
+</launch>
