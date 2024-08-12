@@ -1,0 +1,8 @@
+prefix=/home/ro/ROS/urg/devel
+
+Name: arbotix_test
+Description: Description of arbotix_test
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
