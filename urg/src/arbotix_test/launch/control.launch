@@ -1,0 +1,17 @@
+<launch>
+    <!-- <1.在参数服务器载入urdf文件> -->
+    <param name="robot_description" textfile="$(find arbotix_test)/xacro/control.urdf"/>
+    <!-- <2.启动rviz> -->
+    <node pkg="rviz" type="rviz" name="rviz_gui" args="-d $(find rviz_test)/config/robot_test.rviz" />
+    <!-- <3.关节状态发布节点> -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint" />
+    <!-- <4.机器人状态发布节点> -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot" />
+    <!-- 集成arbotix运动控制节点 -->
+    <node pkg="arbotix_python" type="arbotix_driver" name="driver" output="screen">
+        <!-- 配置文件 -->
+        <rosparam command="load" file="$(find arbotix_test)/config/control.yaml"/>
+        <!-- 指定为仿真环境 -->
+        <param name="sim" value="true"/>
+    </node>
+</launch>

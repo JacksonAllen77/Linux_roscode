@@ -1,0 +1,54 @@
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- 雷达部分[包含连杆属性、关节属性] -->
+    <xacro:property name="connect_radius" value="0.01" />
+    <xacro:property name="connect_height" value="0.15" />
+    <xacro:property name="connect_xmove" value="0" />
+    <xacro:property name="connect_ymove" value="0" />
+    <xacro:property name="connect_zmove" value="${(base_length+connect_height)/2}" />
+
+    <xacro:property name="laser_radius" value="0.03" />
+    <xacro:property name="laser_height" value="0.05" />
+    <xacro:property name="laser_xmove" value="0" />
+    <xacro:property name="laser_ymove" value="0" />    
+    <xacro:property name="laser_zmove" value="${(connect_height+laser_height)/2}" />
+    <!-- 连杆部分构造和连接 -->
+    <link name="connect">
+        <visual>
+            <geometry>
+                <cylinder radius="${connect_radius}" length="${connect_height}"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="camera_colour">
+                <color rgba="0 1 0 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="base2connect" type="fixed">
+            <!-- 父级link -->
+            <parent link="base_link"/>
+            <!-- 子级link    -->
+            <child link="connect"/>
+            <!-- 设置偏移量 -->
+            <origin xyz="${connect_xmove} ${connect_ymove} ${connect_zmove}" rpy="0 0 0"/>
+    </joint>
+    <!-- 激光雷达构造和连接 -->
+     <link name="laser">
+        <visual>
+            <geometry>
+                <cylinder radius="${laser_radius}" length="${laser_height}"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="laser_colour">
+                <color rgba="0 0 1 0.5"/>
+            </material>
+        </visual>
+    </link>
+    <joint name="connect2laser" type="fixed">
+            <!-- 父级link -->
+            <parent link="connect"/>
+            <!-- 子级link    -->
+            <child link="laser"/>
+            <!-- 设置偏移量 -->
+            <origin xyz="${laser_xmove} ${laser_ymove} ${laser_zmove}" rpy="0 0 0"/>
+    </joint>
+</robot>
