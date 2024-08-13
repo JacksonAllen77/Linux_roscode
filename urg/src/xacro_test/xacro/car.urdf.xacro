@@ -1,0 +1,6 @@
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- 包含底盘、摄像头与雷达的xacro文件 -->
+    <xacro:include filename="foot.urdf.xacro"/>
+    <xacro:include filename="laser.urdf.xacro"/>
+    <xacro:include filename="camera.urdf.xacro"/>
+</robot>
