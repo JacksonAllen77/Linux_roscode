@@ -17,8 +17,8 @@
     </xacro:macro>
 
     <!-- 每一个驱动轮都需要配置传动装置 -->
-    <xacro:joint_trans joint_name="left_drive" />
-    <xacro:joint_trans joint_name="right_drive" />
+    <xacro:joint_trans joint_name="base_left" />
+    <xacro:joint_trans joint_name="base_right" />
 
     <!-- 控制器 -->
     <gazebo>
@@ -31,8 +31,8 @@
             <alwaysOn>true</alwaysOn>
             <updateRate>100.0</updateRate>
             <legacyMode>true</legacyMode>
-            <leftJoint>left_drive</leftJoint> <!-- 左轮 -->
-            <rightJoint>right_drive</rightJoint> <!-- 右轮 -->
+            <leftJoint>base_left"</leftJoint> <!-- 左轮 -->
+            <rightJoint>base_right</rightJoint> <!-- 右轮 -->
             <wheelSeparation>${base_radius * 2}</wheelSeparation> <!-- 车轮间距 -->
             <wheelDiameter>${drive_radius * 2}</wheelDiameter> <!-- 车轮直径 -->
             <broadcastTF>1</broadcastTF>
