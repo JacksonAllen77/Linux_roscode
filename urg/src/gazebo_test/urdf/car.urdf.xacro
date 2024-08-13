@@ -5,4 +5,7 @@
     <xacro:include filename="foot.urdf.xacro"/>
     <xacro:include filename="laser.urdf.xacro"/>
     <xacro:include filename="camera.urdf.xacro"/>
+    <!-- 运动控制 -->
+    <xacro:include filename="gazebo/move.xacro"/>
+
 </robot>
