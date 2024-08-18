@@ -31,7 +31,7 @@
             <alwaysOn>true</alwaysOn>
             <updateRate>100.0</updateRate>
             <legacyMode>true</legacyMode>
-            <leftJoint>base_left"</leftJoint> <!-- 左轮 -->
+            <leftJoint>base_left</leftJoint> <!-- 左轮 -->
             <rightJoint>base_right</rightJoint> <!-- 右轮 -->
             <wheelSeparation>${base_radius * 2}</wheelSeparation> <!-- 车轮间距 -->
             <wheelDiameter>${drive_radius * 2}</wheelDiameter> <!-- 车轮直径 -->
