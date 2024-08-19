@@ -1,0 +1,11 @@
+<launch>
+    <!-- <1.添加点云坐标系到kinect坐标系变换> -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="transform" args="0 0 0 -1.57 0 -1.57 /connect /connect_depth "/>
+    <!-- <1.启动rviz> -->
+    <node pkg="rviz" type="rviz" name="rviz_gui" args="-d $(find rviz_test)/config/robot_test.rviz" />
+    <!-- <2.关节状态发布节点> -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint" />
+    <!-- <3.机器人状态发布节点> -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot" />
+
+</launch>
